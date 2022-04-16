@@ -256,7 +256,7 @@ namespace ShapeUI
             if (VerifyRectangleTextBox() > 0)
                 return;
             if (LeftClickLocation.X == 0)
-                MessageBox.Show("You need to select a position first!");
+            { MessageBox.Show("You need to select a position first!"); return; }
             Global.tool.Add(ShapeType.Rectangle, new Dictionary<string, object>()
             {
                 {"Origin", new Point2d{X = LeftClickLocation.X, Y= LeftClickLocation.Y} },
@@ -274,10 +274,10 @@ namespace ShapeUI
             else
                 if (double.TryParse(textBox_Height.Text, out _) == false)
             { textBoxErrors.SetError(textBox_Height, "Field needs to be a double number!");
-            return;
+                return;
             }
             if (LeftClickLocation.X == 0)
-                MessageBox.Show("You need to select a position first!");
+            { MessageBox.Show("You need to select a position first!"); return; }
 
             Global.tool.Add(ShapeType.Circle, new Dictionary<string, object>()
             {
@@ -302,6 +302,12 @@ namespace ShapeUI
 
         private void button_DrawTriangle_Click(object sender, EventArgs e)
         {
+            if (LeftClickLocation.X == 0)
+            { MessageBox.Show("You need to select a position first!"); return; }
+            if(RightClickLocation.X == 0)
+            { MessageBox.Show("You need to select a position first!"); return; }
+            if (RightClickLocation2.X == 0 )
+            { MessageBox.Show("You need to select a position first!"); return; }
             Global.tool.Add(ShapeType.Triangle, new Dictionary<string, object>()
             {
                 {"Origin", new Point2d{X = LeftClickLocation.X,Y= LeftClickLocation.Y} },
@@ -324,7 +330,7 @@ namespace ShapeUI
                 return;
             }
             if (LeftClickLocation.X == 0)
-                MessageBox.Show("You need to select a position first!");
+            { MessageBox.Show("You need to select a position first!"); return; }
 
             Global.tool.Add(ShapeType.Square, new Dictionary<string, object>()
             {
@@ -340,7 +346,7 @@ namespace ShapeUI
         {
             if (string.IsNullOrEmpty(filepath)) return;
             if (LeftClickLocation.X == 0)
-                MessageBox.Show("You need to select a position first!");
+            { MessageBox.Show("You need to select a position first!"); return; }
 
             Global.tool.Add(ShapeType.Picture, new Dictionary<string, object>()
             {
