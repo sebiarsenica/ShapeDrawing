@@ -1,7 +1,7 @@
 # ShapeDrawing
 A windows forms C# app to draw shapes and pictures.
 The app can draw the following shapes: 
-- Rectangle: You need to select a point with left click and enter the height and widht 
+- Rectangle: You need to select a point with left click and enter the height and width
 - Circle: You need to select a point with left click and ender the radius 
 - Line: You need to select the first point with left click and the second point with right click
 - Square: You need to select a point with left click and enter the height 
